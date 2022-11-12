@@ -1,10 +1,9 @@
-import Navbar from "../components/Navbar"
+import { Container } from "react-bootstrap"
 
 export default function Home() {
   return (
-    <div>
-        {/* <Navbar /> */}
-        <div>hello</div>
-    </div>
+    <Container variant="bg-dark">
+        Hello
+    </Container>
   )
 }
