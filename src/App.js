@@ -1,24 +1,26 @@
-import Home from "./routes/Home"
-import Header from "./components/Header";
+import Home from "./routes/Home";
+import About from "./routes/About";
 import {
-    BrowserRouter,
-    Routes,
+    BrowserRouter as
+    Router,
+    Switch,
     Route,
   } from 'react-router-dom';
+import React from "react";
 
 export default function App() {
   return (
-    <BrowserRouter>
-    <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      {/* <Route path="/post">
-        <Route path=":id" element={<PostSingle />} />
-      </Route>
-      <Route path="/students" element={<Students />} />
-      <Route path="/counter" element={<CounterView />} />
-      <Route path="/pokedex" element={<Pokedex />} /> */}
-    </Routes>
-  </BrowserRouter>
+    <React.StrictMode>
+        <Router>
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path="/about">
+                    <About />
+                </Route>
+            </Switch>
+        </Router>
+    </React.StrictMode>
   )
 }
